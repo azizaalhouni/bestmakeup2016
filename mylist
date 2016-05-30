@@ -1,0 +1,248 @@
+<!doctype html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8">
+  <meta name="Generator" content="EditPlus®">
+  <meta name="Author" content="">
+  <meta name="Keywords" content="">
+  <meta name="Description" content="">
+  
+<title>Makeup Guide</title>
+<link href="style.css" rel="stylesheet" media="all" type="text/css" />
+</head>
+<style>
+.mySlides {display:none;}
+</style>
+    
+      
+    
+    <body onload ="load()">
+	<div id="wrapper"> 
+  <div id="container"> 
+    <div id="header"> 
+      <div id="logo"><br>
+        <br>
+        <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<strong><font color="#FFFFFF" size="+2" face="Georgia, Times New Roman, Times, serif"> 
+        YOU WILL FIND THE BEST MAKEUP EXPERIENCE <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </font></strong></div>
+    </div>
+    <!-- /header -->
+    <div id="navbar"> 
+      <ul>
+        <li><a href="index.html" class="active">Home</a></li>
+        </ul>
+    </div>
+    <!-- /navbar -->
+    <div id="main"> 
+      <div id="intro"> 
+        <!-- <div id="sellerpic">
+        </div>-->
+        <!-- /jakepic -->
+        <div id="text"> </div>
+        <!-- /text -->
+        <table height="350" align="center" width="700">
+          <tr bgcolor="#CC3300"> 
+            <td width="610" bgcolor="#FBF7E1" valign="top"><p align="justify"><br>
+                <br>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <strong><font color="#FF0000" size="+1" face="Courier New">
+ 
+                Best Makeup :</font></strong> <br>
+ 		Please make your list before buy makeup<br><br>
+
+                <strong>  
+    <div>
+        <label align="Center" >Name:  </label>
+        <input id="textfield" type="text"><br><br><br>
+		
+  
+  What do you need for your eyes? <input type="text1"  id="textfield1"/><br><br>
+
+  What do you need for your lips? <input type="text2"  id="textfield2"/><br><br>
+   What do you need for your Skin? <input type="text3"  id="textfield3"/><br>
+        
+              
+        <br>
+        <button id="button" type="button">Save my List!</button>
+		<button id="button1" type="button" onClick ="removed()">Remove my info! </button><br><br><br>
+		
+        <div id="message"></div>
+		<div id="message1"></div>
+		  <div id="message2"></div>
+		  		  <div id="message3"></div>
+		 
+		        <div id="result"></div>
+    </div>
+    
+  <script>
+  // Step 1: Find the element we want the event on
+  var button = document.getElementById("button");
+  // Step 2: Define the event listener function
+     
+  var onButtonClick = function() {
+   var fieldValue = document.getElementById('textfield').value;
+localStorage.setItem('text', fieldValue);
+	  var fieldValue1 = document.getElementById('textfield1').value;
+localStorage.setItem('text1', fieldValue1);
+var fieldValue2 = document.getElementById('textfield2').value;
+localStorage.setItem('text2', fieldValue2);
+var fieldValue3 = document.getElementById('textfield3').value;
+localStorage.setItem('text3', fieldValue3);
+
+	 
+	         var greeting = "Hello, " + fieldValue;
+    document.getElementById("message").textContent = greeting + "  You would like to buy:  ";
+
+
+	var greeting1 = "For you Eyes:  " + fieldValue1;
+    document.getElementById("message1").textContent = greeting1;
+	var greeting2 = "For your Lips:  " + fieldValue2;
+    document.getElementById("message2").textContent = greeting2;
+	var greeting3 = "For your Skin:  " + fieldValue3;
+    document.getElementById("message3").textContent = greeting3;
+	
+  };
+  function removed()
+  {
+	  document.getElementById('textfield').value ='';
+	  localStorage.removeItem('text');
+var greeting = " " ;
+    document.getElementById("message").textContent = greeting;
+	//2
+	document.getElementById('textfield1').value ='';
+	  localStorage.removeItem('text1');
+var greeting1 = " " ;
+    document.getElementById("message1").textContent = greeting1;
+	//3
+	document.getElementById('textfield2').value ='';
+	  localStorage.removeItem('text2');
+var greeting2 = " " ;
+    document.getElementById("message2").textContent = greeting2;
+	//4
+	document.getElementById('textfield3').value ='';
+	  localStorage.removeItem('text3');
+var greeting3 = " " ;
+    document.getElementById("message3").textContent = greeting3;
+	
+  }
+  
+   function load()
+  {
+	  var storedValue = localStorage.getItem('text');
+	  var storedValue1 = localStorage.getItem('text1');
+	  var storedValue2 = localStorage.getItem('text2');
+	  var storedValue3 = localStorage.getItem('text3');
+	  
+	
+		  document.getElementById('textfield').value = storedValue;
+		  document.getElementById('textfield1').value = storedValue1;
+		  document.getElementById('textfield2').value = storedValue2;
+		  document.getElementById('textfield3').value = storedValue3;
+if(storedValue)
+	  {
+		   var greeting = "Hello, " + storedValue;
+    document.getElementById("message").textContent = greeting + "  You would like to buy:  ";
+	  }
+	  if(storedValue1){
+
+	var greeting1 = "For your Eyes:  " + storedValue1;
+    document.getElementById("message1").textContent = greeting1;
+	  }
+	  if(storedValue2)
+	  {
+		  var greeting2 = "For your Lips:   " + storedValue2;
+    document.getElementById("message2").textContent = greeting2;
+	  }
+	  if(storedValue2){
+		  var greeting3 = "For your Skin: " + storedValue3;
+    document.getElementById("message3").textContent = greeting3;
+	  }
+	  }
+  // Step 3: Attach event listener to element
+  button.addEventListener("click", onButtonClick);
+  </script>
+   <td width="147" bgcolor="#F3ECC2"> <table>
+                
+                
+                <tr></tr>
+                <tr></tr>
+                <tr></tr>
+                <tr></tr>
+                <tr></tr>
+                <tr></tr>
+                <tr></tr>
+                <tr></tr>
+                <tr></tr>
+                <tr></tr>
+                <tr></tr>
+                <tr></tr>
+                <tr></tr>
+                
+                <tr> 
+                  <td align="center"><font face="Comic Sans MS" size="+1" class="big"><a href="makeup.html">Buy Makeup</a></font></td>
+                </tr>
+                <tr> 
+                  <td align="center"><font face="Comic Sans MS" size="+1" class="big"><a href="about.html">About</a></font></td>
+                </tr>
+				<tr> 
+                  <td align="center"><font face="Comic Sans MS" size="+1" class="big"><a href="mylist.html">My List</a></font></td>
+                </tr>
+                
+                <tr></tr>
+                <tr></tr>
+                <tr></tr>
+                <tr></tr>
+                <tr></tr>
+                <tr></tr>
+                <tr></tr>
+                <tr></tr>
+                <tr></tr>
+                <tr></tr>
+                <tr></tr>
+                <tr></tr>
+                <tr></tr>
+                <tr></tr>
+                <tr></tr>
+                <tr></tr>
+                <tr></tr>
+                <tr></tr>
+                <tr></tr>
+                <tr></tr>
+                <tr></tr>
+                <tr></tr>
+                <tr></tr>
+                <tr></tr>
+                <tr></tr>
+                <tr></tr>
+                <tr></tr>
+              </table></td>
+          </tr>
+        </table>
+      </div>
+      <!-- /intro -->
+      <div id="columns-wrapper"> 
+        <!-- /form-intro -->
+        <!-- /newsletter -->
+        <!-- /right -->
+        <!-- /left -->
+      </div>
+      <!-- /columns-wrapper -->
+    </div>
+    <!-- /main -->
+    <div id="footer"> 
+      <div id="footer-right">&nbsp;</div>
+      <div id="footer-left">&nbsp;</div>
+      <br>
+      <br>
+      <strong><font color="#33CC66">WWW.bestmakeup.com</font></strong> </div>
+    <!-- /footer -->
+  </div>
+  <!-- /container -->
+</div>
+<!-- /wrapper -->
+
+    </body>
+</html>
+ </body>
+</html>
